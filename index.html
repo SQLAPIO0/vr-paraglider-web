@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VR PARAGLIDER | Caracas Extreme Experience</title>
+    <meta property="og:title" content="VR PARAGLIDER | Vuela sobre Caracas">
+    <meta property="og:description" content="El primer simulador de parapente dual con tecnología VR en Venezuela.">
+    <meta property="og:image" content="assets/img/preview-link.jpg"> 
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="windCanvas"></canvas>
+
+    <nav>
+        <a href="#" class="logo" id="logoLink">VR<span>PARAGLIDER</span></a>
+        <div class="nav-links">
+            <a href="#juegos">EXPERIENCIA</a>
+            <a href="#ubicaciones">PUNTOS DE DESPEGUE</a>
+        </div>
+    </nav>
+
+    <section class="hero-extreme">
+        <div class="video-overlay"></div>
+        <div class="hero-content">
+            <div class="experience-badge">SISTEMA DUAL 2 JUGADORES</div>
+            <h1 class="glitch" data-text="VUELA_JUNTOS">VUELA JUNTOS</h1>
+            <p>La montaña y el equipo clásico de parapente se fusionan con la tecnología VR más extrema de Venezuela.</p>
+            
+            <div class="cta-group">
+                <button class="btn-primary" onclick="triggerLaunch()">¡RESERVAR MI VUELO!</button>
+            </div>
+        </div>
+    </section>
+
+ <section id="equipo" class="hardware-showcase">
+    <div class="content-wrapper">
+        <h2 class="title-neon">TECNOLOGÍA DE VUELO REAL</h2>
+        <div class="hardware-flex">
+            <div class="hw-text">
+                <ul>
+                    <li><strong>Estructura Dual:</strong> Ingeniería de precisión para 2 jugadores en simultáneo.</li>
+                    <li><strong>Inmersión Total:</strong> Diseño inspirado en el equipo clásico de montaña.</li>
+                    <li><strong>Feedback Físico:</strong> Siente cada ráfaga de viento y cambio de presión.</li>
+                </ul>
+            </div>
+            
+            <div class="hw-video-container">
+                <video autoplay muted loop playsinline class="video-local">
+                    <source src="assets/video/vr-paraglider-simulator.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video>
+                <div class="video-glow"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="juegos" class="games-gallery">
+    <h2 class="title-neon">MUNDOS POR EXPLORAR</h2>
+    <div class="game-grid">
+        
+        <div class="game-card">
+            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?q=80&w=600')"></div>
+            <div class="card-overlay">
+                <div class="card-body">
+                    <span class="difficulty-tag legendario">LEGENDARIO</span>
+                    <h4>RED BULL DEATH TEAM</h4>
+                    <p>Vuelo acrobático sincronizado a velocidades extremas. Solo para expertos.</p>
+                    <button class="btn-play-mini">VOLAR AHORA</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=600')"></div>
+            <div class="card-overlay">
+                <div class="card-body">
+                    <span class="difficulty-tag baja">BAJA</span>
+                    <h4>MUNDO SUBMARINO</h4>
+                    <p>Explora fosas marinas y ciudades sumergidas en una experiencia 360°.</p>
+                    <button class="btn-play-mini">VOLAR AHORA</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?q=80&w=600')"></div>
+            <div class="card-overlay">
+                <div class="card-body">
+                    <span class="difficulty-tag media">MEDIA</span>
+                    <h4>DESIERTO DE RUINAS</h4>
+                    <p>Domina las corrientes térmicas sobre las dunas más altas del Sahara.</p>
+                    <button class="btn-play-mini">VOLAR AHORA</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=600')"></div>
+            <div class="card-overlay">
+                <div class="card-body">
+                    <span class="difficulty-tag alta">ALTA</span>
+                    <h4>VALLE JURÁSICO</h4>
+                    <p>Escapa de depredadores prehistóricos volando entre densas selvas.</p>
+                    <button class="btn-play-mini">VOLAR AHORA</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=600')"></div>
+            <div class="card-overlay">
+                <div class="card-body">
+                    <span class="difficulty-tag extrema">EXTREMA</span>
+                    <h4>ODISEA INTERESTELAR</h4>
+                    <p>Vuelo en gravedad cero a través de nebulosas y estaciones espaciales.</p>
+                    <button class="btn-play-mini">VOLAR AHORA</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-card">
+            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=600')"></div>
+            <div class="card-overlay">
+                <div class="card-body">
+                    <span class="difficulty-tag media">MEDIA</span>
+                    <h4>AVENTURA INVERNAL</h4>
+                    <p>Desciende por picos nevados y esquiva avalanchas en los Alpes.</p>
+                    <button class="btn-play-mini">VOLAR AHORA</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+    <section id="experiencia" class="experience-grid">
+        <div class="exp-card highlight">
+            <div class="icon">⛰️</div>
+            <h3>Sincronización Total</h3>
+            <p>Tú y tu compañero en el mismo entorno. Coordinen el giro para conquistar las nubes.</p>
+        </div>
+        <div class="exp-card">
+            <div class="icon">🌀</div>
+            <h3>Diseño de Vanguardia</h3>
+            <p>Hardware inspirado en el bolso tipo paraguas y la forma de la montaña. Diferenciación total en el mercado.</p>
+        </div>
+        <div class="exp-card">
+            <div class="icon">🦅</div>
+            <h3>Avanza con Valentía</h3>
+            <p>Siente la libertad de volar libremente con feedback háptico que te hará vibrar.</p>
+        </div>
+    </section>
+
+    <section id="ubicaciones" class="location-section">
+        <h2 class="title-neon">PUNTOS DE DESPEGUE EN CARACAS</h2>
+        <div class="location-grid">
+            <div class="loc-item">
+                <div class="status-dot"></div>
+                <h4>CCCT</h4>
+                <p>Nivel C2, Frente a la Feria</p>
+            </div>
+            <div class="loc-item">
+                <div class="status-dot"></div>
+                <h4>IPSFA</h4>
+                <p>Los Proceres, Caracas</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="social-sidebar">
+    <a href="https://www.facebook.com/profile.php?id=61576181917369" target="_blank" class="social-icon fb">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/vrparaglider/" target="_blank" class="social-icon ig">
+        <i class="fab fa-instagram"></i>
+    </a>
+    <a href="https://www.tiktok.com/@vrparaglider" target="_blank" class="social-icon tt">
+        <i class="fab fa-tiktok"></i>
+    </a>
+    </div>
+
+    <div class="fog-container">
+        <div class="fog-layer"></div>
+    </div>
+
+    <footer>
+        <p>@VRPARAGLIDER - ESPÍRITU AVENTURERO 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

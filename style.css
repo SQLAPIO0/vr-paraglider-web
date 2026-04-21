@@ -1,0 +1,578 @@
+:root {
+    --neon-green: #39ff14;
+    --electric-blue: #00f2ff;
+    --deep-dark: #050505;
+    --action-orange: #ff4d00;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--deep-dark);
+    font-family: 'Rajdhani', sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Nav */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5%;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+}
+
+.logo { 
+    font-family: 'Orbitron'; 
+    font-weight: 900; 
+    font-size: 1.5rem; 
+    text-decoration: none; /* Elimina el subrayado de enlace */
+    color: #fff;           /* Color blanco para la parte de "VR" */
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.logo span { 
+    color: var(--electric-blue); 
+    margin-left: 2px; /* Un pequeño ajuste de espacio */
+}
+
+/* Efecto visual al pasar el mouse */
+.logo:hover {
+    filter: drop-shadow(0 0 8px var(--electric-blue));
+    transform: scale(1.02);
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Hero "Gamer" */
+/* Hero "Gamer" con paisaje más claro y vibrante */
+.hero-extreme {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Hemos bajado el 0.4 a 0.2 para que se vea más clara la foto */
+    background: linear-gradient(rgba(0,0,0,0.1), var(--deep-dark)),
+                url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=2000');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    
+    /* Este ajuste hace que el paisaje se vea más vivo */
+    filter: brightness(1.1) saturate(1.2); 
+}
+
+/* Ajuste para que el texto siga siendo legible sobre el fondo claro */
+.hero-content {
+    z-index: 1;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8); /* Sombra más fuerte al texto */
+}
+
+.experience-badge {
+    background: var(--action-orange);
+    display: inline-block;
+    padding: 5px 15px;
+    font-weight: bold;
+    font-family: 'Orbitron';
+    font-size: 0.7rem;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: var(--electric-blue);
+    text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background: var(--neon-green);
+    color: black;
+    padding: 1.2rem 2.5rem;
+    font-weight: 900;
+    font-family: 'Orbitron';
+    border: none;
+    cursor: pointer;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px var(--neon-green);
+}
+
+/* Grid de Experiencia */
+.experience-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 80px 5%;
+}
+
+.exp-card {
+    background: #111;
+    padding: 30px;
+    border-left: 4px solid var(--electric-blue);
+    width: 320px;
+    transition: 0.4s;
+}
+
+.exp-card:hover { transform: translateY(-10px); background: #1a1a1a; }
+
+/* Ubicaciones */
+.location-section {
+    padding: 80px 5%;
+    background: #000;
+    text-align: center;
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.loc-item {
+    background: rgba(255, 255, 255, 0.03); /* Fondo muy suave */
+    border: 1px solid rgba(0, 242, 255, 0.1); /* Borde cian muy fino */
+    padding: 20px;
+    position: relative;
+    transition: all 0.4s ease;
+    cursor: crosshair; /* Cambia el cursor a una mira de precisión */
+}
+
+.loc-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid var(--neon-green);
+    border-left: 2px solid var(--neon-green);
+    transition: 0.3s;
+}
+
+.loc-item:hover {
+    background: rgba(0, 242, 255, 0.05);
+    border-color: var(--neon-green);
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+}
+
+.loc-item:hover::before {
+    width: 20px;
+    height: 20px;
+}
+
+.loc-item h4 {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.loc-item p {
+    margin: 5px 0 0 0;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Courier New', monospace; /* Estilo técnico */
+}
+
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--neon-green);
+    border-radius: 50%;
+    margin-bottom: 10px;
+    position: relative;
+    box-shadow: 0 0 10px var(--neon-green);
+}
+
+/* El efecto de pulso */
+.status-dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--neon-green);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { width: 8px; height: 8px; opacity: 1; }
+    100% { width: 25px; height: 25px; opacity: 0; }
+}
+
+/* Estilo para el Showcase de Hardware */
+.hardware-showcase {
+    padding: 80px 5%;
+    background: linear-gradient(to right, #0a0a0a, #1a1a1a);
+}
+
+.hardware-flex {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.hw-text ul {
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+.hw-text li {
+    margin-bottom: 15px;
+    border-left: 3px solid var(--neon-green);
+    padding-left: 15px;
+}
+
+.hw-image img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px var(--electric-blue);
+    border: 2px solid var(--electric-blue);
+}
+
+.games-gallery {
+    padding: 100px 5%;
+    text-align: center;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 50px 0;
+}
+
+.game-card {
+    position: relative;
+    height: 400px; /* Altura fija para un look de arcade */
+    border-radius: 15px;
+    overflow: hidden;
+    background: #000;
+    cursor: pointer;
+    border: 1px solid #222;
+}
+
+/* Imagen de fondo con zoom al pasar el mouse */
+.card-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.game-card:hover .card-image {
+    transform: scale(1.1);
+}
+
+/* LA CAPA QUE SE DESLIZA (Igual al video) */
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Graduación para que el texto sea legible */
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, rgba(0,242,255,0.2));
+    display: flex;
+    align-items: flex-end; /* Empuja el contenido al fondo */
+    padding: 30px;
+    
+    /* Estado inicial: escondido hacia abajo */
+    transform: translateY(70%); 
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.game-card:hover .card-overlay {
+    transform: translateY(0); /* Sube completamente al pasar el mouse */
+}
+
+/* Contenido interno */
+.card-body {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease 0.2s; /* Un pequeño retraso para que suba después de la capa */
+}
+
+.game-card:hover .card-body {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-body h4 {
+    font-family: 'Orbitron';
+    color: var(--electric-blue);
+    font-size: 1.4rem;
+    margin: 10px 0;
+}
+
+/* Colores de Dificultad Personalizados */
+.difficulty-tag {
+    color: white;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    font-weight: bold;
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-family: 'Orbitron';
+}
+
+.difficulty-tag.baja { background: #33cc33; } /* Verde */
+.difficulty-tag.media { background: #ffcc00; color: black; } /* Amarillo */
+.difficulty-tag.alta { background: #ff6600; } /* Naranja */
+.difficulty-tag.extrema { background: #cc0000; } /* Rojo */
+.difficulty-tag.legendario { background: #9900cc; } /* Púrpura */
+
+.btn-play-mini {
+    margin-top: 15px;
+    background: var(--neon-green);
+    border: none;
+    border-left: 3px solid rgba(255, 255, 255, 0.5); /* Simula un brillo en el borde izquierdo */
+    padding: 10px 20px;
+    font-family: 'Orbitron';
+    font-weight: bold;
+    cursor: pointer;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+    
+    /* --- MEJORAS NUEVAS --- */
+    color: #000; /* Texto oscuro para contraste con el verde neón */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transición suave */
+    box-shadow: 0 0 0px var(--neon-green); /* Brillo apagado por defecto */
+}
+
+.btn-play-mini:hover {
+    transform: scale(1.05) translateX(5px); /* Se agranda y se desplaza un poco */
+    background: #fff; /* Cambia a blanco o un verde más brillante */
+    box-shadow: 0 0 20px var(--neon-green); /* Aparece el resplandor neón */
+    letter-spacing: 1px; /* El texto se expande un poco */
+}
+
+/* Contenedor del Video Local */
+.hw-video-container {
+    flex: 1;
+    min-width: 320px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid var(--electric-blue);
+    box-shadow: 0 0 25px rgba(0, 242, 255, 0.3);
+}
+
+.video-local {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    /* Ajuste de brillo para que el equipo se vea vibrante */
+    filter: brightness(1.1);
+}
+
+/* Efecto de resplandor animado detrás del video */
+.video-glow {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    box-shadow: inset 0 0 50px rgba(0, 242, 255, 0.2);
+    pointer-events: none;
+}
+
+/* Ajustes de la cuadrícula para el video y texto */
+.hardware-flex {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 40px 0;
+}
+
+@media (max-width: 768px) {
+    .hardware-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hw-text ul {
+        display: inline-block;
+        text-align: left;
+    }
+}
+
+/* Barra Lateral de Redes Sociales */
+.social-sidebar {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 9999;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* Colores de Marca */
+.fb { background: #1877F2; }
+.ig { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.tt { background: #000000; border: 1px solid #25F4EE; }
+
+/* Efecto al pasar el mouse */
+.social-icon:hover {
+    transform: scale(1.2) translateX(-5px);
+    box-shadow: 0 0 20px var(--electric-blue);
+}
+
+#windCanvas {
+    position: fixed; /* Se queda fijo mientras haces scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Lo envía al fondo de todo */
+    background: #050505; /* Un fondo oscuro profundo como el de LoL */
+    pointer-events: none; /* Permite hacer clic en los botones que están "encima" */
+}
+
+.fog-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Por encima del canvas, pero detrás del texto */
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.4; /* Muy sutil */
+}
+
+.fog-layer {
+    position: absolute;
+    width: 200%; /* Más grande que la pantalla para que pueda moverse */
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    filter: blur(50px);
+    animation: drift 20s linear infinite;
+}
+
+@keyframes drift {
+    from { transform: translateX(-50%) translateY(-10%); }
+    to { transform: translateX(0%) translateY(10%); }
+}
+
+.title-neon { color: var(--electric-blue); font-family: 'Orbitron'; margin-bottom: 20px;}
+
+footer { text-align: center; padding: 40px; color: #444; font-size: 0.8rem; }
+
+/* Media Query para teléfonos */
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column; /* Apila el logo y los links verticalmente */
+        padding: 15px 10px;
+        height: auto;
+    }
+
+    .nav-links {
+        margin-top: 15px;
+        gap: 10px; /* Reduce el espacio entre links */
+        width: 100%;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        font-size: 0.7rem; /* Reduce un poco el tamaño de fuente */
+        letter-spacing: 1px;
+    }
+
+    .logo {
+        font-size: 1.2rem; /* Achicamos un poco el logo para que no domine todo */
+    }
+
+    .experience-badge {
+        font-size: 0.6rem;
+        padding: 5px 10px;
+        width: fit-content;
+        margin: 0 auto 10px;
+    }
+
+    h1.glitch {
+        font-size: 2.2rem; /* Bajamos el tamaño para que no se corte */
+        line-height: 1;
+    }
+    
+    .hero-content p {
+        font-size: 0.9rem;
+        padding: 0 15px; /* Evita que el texto toque los bordes del cel */
+    }
+
+    .social-sidebar {
+        flex-direction: row; /* Ponerlos horizontales */
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%); /* Los centramos abajo */
+        top: auto;
+        gap: 15px;
+    }
+
+    /* Forzamos a que el overlay sea siempre visible en móviles */
+    .card-overlay {
+        opacity: 1 !important; 
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 30%, transparent 100%);
+        display: flex;
+        align-items: flex-end; /* Empuja el texto hacia abajo para ver la imagen arriba */
+    }
+
+    .card-body {
+        transform: translateY(0) !important; /* Evita que el texto esté "escondido" abajo */
+        padding: 15px;
+    }
+
+    .card-body p {
+        font-size: 0.8rem; /* Un poco más pequeño para que quepa todo */
+        display: block !important; /* Asegura que el párrafo no se oculte */
+    }
+
+    /* Opcional: Hacer la tarjeta un poco más alta en móvil para que quepa el texto y la foto */
+    .game-card {
+        height: 350px; 
+    }
+}
