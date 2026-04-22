@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <link rel="preload" as="image" href="assets/img/poster-simulador.webp" imagesrcset="assets/img/poster-simulador.webp" imagesizes="100vw">
+    <link rel="preload" as="image" href="assets/img/poster-simulador.webp" type="image/webp">
 
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
 
@@ -23,7 +23,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
       integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
-      crossorigin="anonymous" referrerpolicy="no-referrer">
+      crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'">
 </head>
 <body>
 
@@ -45,7 +45,7 @@
             <p>La montaña y el equipo clásico de parapente se fusionan con la tecnología VR más avanzada de Venezuela.</p>
             
             <div class="cta-group">
-                <button class="btn-primary" onclick="triggerLaunch()">¡RESERVAR MI VUELO!</button>
+                <button class="btn-reserva" onclick="triggerLaunch()">¡RESERVAR MI VUELO!</button>
             </div>
         </div>
     </section>
@@ -63,10 +63,10 @@
             </div>
             
     <div class="hw-video-container">
-        <video autoplay muted loop playsinline class="video-local" poster="assets/img/poster-simulador.webp">
-                <source src="assets/video/vr-paraglider-simulator.mp4" type="video/mp4">
-                Tu navegador no soporta la reproducción de video.
-        </video>
+<video autoplay muted loop playsinline class="video-local" poster="assets/img/poster-simulador.webp">
+    <source src="assets/video/vr-paraglider-simulator.mp4" type="video/mp4">
+    Tu navegador no soporta la reproducción de video.
+</video>
         <div class="video-glow"></div>
     </div>
         </div>
@@ -78,7 +78,7 @@
     <div class="game-grid">
         
         <div class="game-card">
-            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?q=80&w=600')"></div>
+            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?q=70&w=800&fm=webp')"></div>
             <div class="card-overlay">
                 <div class="card-body">
                     <span class="difficulty-tag legendario">LEGENDARIO</span>
@@ -90,7 +90,7 @@
         </div>
 
         <div class="game-card">
-            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=600')"></div>
+            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=70&w=800&fm=webp')"></div>
             <div class="card-overlay">
                 <div class="card-body">
                     <span class="difficulty-tag baja">BAJA</span>
@@ -102,7 +102,7 @@
         </div>
 
         <div class="game-card">
-            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?q=80&w=600')"></div>
+            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?q=70&w=800&fm=webp')"></div>
             <div class="card-overlay">
                 <div class="card-body">
                     <span class="difficulty-tag media">MEDIA</span>
@@ -114,7 +114,7 @@
         </div>
 
         <div class="game-card">
-            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=600')"></div>
+            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=70&w=800&fm=webp')"></div>
             <div class="card-overlay">
                 <div class="card-body">
                     <span class="difficulty-tag alta">ALTA</span>
@@ -126,7 +126,7 @@
         </div>
 
         <div class="game-card">
-            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=600')"></div>
+            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=70&w=800&fm=webp')"></div>
             <div class="card-overlay">
                 <div class="card-body">
                     <span class="difficulty-tag extrema">EXTREMA</span>
@@ -138,7 +138,7 @@
         </div>
 
         <div class="game-card">
-            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=80&w=600')"></div>
+            <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1483921020237-2ff51e8e4b22?q=70&w=800&fm=webp')"></div>
             <div class="card-overlay">
                 <div class="card-body">
                     <span class="difficulty-tag media">MEDIA</span>
@@ -171,21 +171,32 @@
         </div>
     </section>
 
-    <section id="ubicaciones" class="location-section">
-        <h2 class="title-neon">PUNTOS DE DESPEGUE EN CARACAS</h2>
-        <div class="location-grid">
-            <div class="loc-item">
-                <div class="status-dot"></div>
-                <h4>CCCT</h4>
-                <p>Nivel C2, Frente a la Feria</p>
-            </div>
-            <div class="loc-item">
-                <div class="status-dot"></div>
-                <h4>IPSFA</h4>
-                <p>Los Proceres, Caracas</p>
-            </div>
+<section id="ubicaciones" class="location-section">
+    <h2 class="title-neon">PUNTOS DE DESPEGUE EN CARACAS</h2>
+    <div class="location-grid">
+        
+        <div class="loc-item">
+            <div class="status-dot"></div>
+            <h4>CCCT</h4>
+            <p>
+                <strong>Nivel C1</strong><br>
+                Frente a la Feria de Comida<br>
+                <small>📍 Ref: Punto Farmatodo</small>
+            </p>
         </div>
-    </section>
+
+        <div class="loc-item">
+            <div class="status-dot"></div>
+            <h4>IPSFA</h4>
+            <p>
+                <strong>Los Próceres - Piso 2</strong><br>
+                Entrada por la Feria de Comida<br>
+                <small>📍 Ref: Acceso Principal</small>
+            </p>
+        </div>
+
+    </div>
+</section>
 
     <div class="social-sidebar">
     <a href="https://www.facebook.com/profile.php?id=61576181917369" target="_blank" class="social-icon fb">
@@ -207,6 +218,25 @@
         <p>@VRPARAGLIDER - ESPÍRITU AVENTURERO 2026</p>
     </footer>
 
-    <script src="script.js"></script>
+<script src="script.js"></script> <script>
+    function triggerLaunch() {
+        // 1. Efecto visual: Flash de encendido de casco VR
+        document.body.style.transition = "0.2s";
+        document.body.style.filter = "brightness(1.5) contrast(1.2)";
+        
+        setTimeout(() => {
+            // 2. Volver a la normalidad
+            document.body.style.filter = "none";
+            
+            // 3. El mensaje de Windows (Alert)
+            alert("🚀 SISTEMA VR LISTO: ¡Prepárate para el salto en Caracas! Síguenos a traves de nuestras Redes Sociales");
+            
+            // 4. OPCIONAL: Redirigir a WhatsApp o Instagram (Descomenta la línea de abajo si quieres usarlo)
+            // window.location.href = "https://wa.me/tunúmero"; 
+        }, 200);
+    }
+    </script>
+</body>
+
 </body>
 </html>

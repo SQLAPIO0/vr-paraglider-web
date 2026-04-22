@@ -67,14 +67,12 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Hemos bajado el 0.4 a 0.2 para que se vea más clara la foto */
-    background: linear-gradient(rgba(0,0,0,0.1), var(--deep-dark)),
-                url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=2000');
+    /* Quitamos el rojo y ponemos el paisaje con el permiso que activamos en el paso 1 */
+    background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.6)),
+                url('https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=75&w=1920&fm=webp');
     background-size: cover;
     background-position: center;
     text-align: center;
-    
-    /* Este ajuste hace que el paisaje se vea más vivo */
     filter: brightness(1.1) saturate(1.2); 
 }
 
@@ -85,13 +83,18 @@ nav {
 }
 
 .experience-badge {
-    background: var(--action-orange);
+    background: rgba(0, 0, 0, 0.6); /* Fondo oscuro translúcido */
+    color: #ffffff; /* Texto blanco puro */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
     display: inline-block;
-    padding: 5px 15px;
-    font-weight: bold;
-    font-family: 'Orbitron';
-    font-size: 0.7rem;
-    margin-bottom: 10px;
+    padding: 4px 12px;
+    font-weight: 700;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.65rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px; /* Espaciado premium */
+    border-radius: 2px;
 }
 
 h1 {
@@ -102,21 +105,27 @@ h1 {
     margin-bottom: 15px;
 }
 
-.btn-primary {
-    background: var(--neon-green);
-    color: black;
-    padding: 1.2rem 2.5rem;
+.btn-reserva {
+    background-color: #39ff14; /* El verde neón de tu imagen */
+    color: #000; /* Texto negro para que resalte */
+    padding: 15px 35px;
+    font-family: 'Orbitron', sans-serif;
     font-weight: 900;
-    font-family: 'Orbitron';
+    font-size: 1.1rem;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
-    transition: 0.3s;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.4);
+    margin-top: 20px;
 }
 
-.btn-primary:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 30px var(--neon-green);
+/* Efecto al pasar el mouse (Hover) */
+.btn-reserva:hover {
+    background-color: #32cd32;
+    box-shadow: 0 0 25px rgba(57, 255, 20, 0.8);
+    transform: scale(1.05);
 }
 
 /* Grid de Experiencia */

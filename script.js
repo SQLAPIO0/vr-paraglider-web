@@ -5,7 +5,7 @@ function triggerLaunch() {
     
     setTimeout(() => {
         document.body.style.filter = "none";
-        alert("🚀 SISTEMA VR LISTO: ¡Prepárate para el salto en Caracas! Síguenos en @vrparaglider");
+        alert("🚀 SISTEMA VR LISTO: ¡Prepárate para el salto en Caracas! Síguenos a traves de nuestras Redes Sociales");
     }, 200);
 }
 
