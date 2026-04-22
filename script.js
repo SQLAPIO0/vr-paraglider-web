@@ -1,4 +1,4 @@
-// 1. Definimos la función de despegue
+// Función de despegue
 function triggerLaunch() {
     document.body.style.transition = "0.2s";
     document.body.style.filter = "brightness(1.5) contrast(1.2)";
@@ -9,10 +9,11 @@ function triggerLaunch() {
     }, 200);
 }
 
-// 2. Esperamos a que la web cargue para asignar el clic al botón
+// Escuchador de eventos (Evita el error de CSP)
 document.addEventListener('DOMContentLoaded', () => {
-    const botonReserva = document.getElementById('btn-vuelo');
+    console.log("Sistema VR Inicializado...");
     
+    const botonReserva = document.getElementById('btn-vuelo');
     if (botonReserva) {
         botonReserva.addEventListener('click', triggerLaunch);
     }
