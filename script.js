@@ -1,5 +1,5 @@
+// 1. Definimos la función de despegue
 function triggerLaunch() {
-    // Sonido visual de despegue
     document.body.style.transition = "0.2s";
     document.body.style.filter = "brightness(1.5) contrast(1.2)";
     
@@ -8,6 +8,15 @@ function triggerLaunch() {
         alert("🚀 SISTEMA VR LISTO: ¡Prepárate para el salto en Caracas! Síguenos a traves de nuestras Redes Sociales");
     }, 200);
 }
+
+// 2. Esperamos a que la web cargue para asignar el clic al botón
+document.addEventListener('DOMContentLoaded', () => {
+    const botonReserva = document.getElementById('btn-vuelo');
+    
+    if (botonReserva) {
+        botonReserva.addEventListener('click', triggerLaunch);
+    }
+});
 
 // Efecto sutil de movimiento en el fondo (Parallax)
 document.addEventListener('mousemove', (e) => {

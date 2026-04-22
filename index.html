@@ -37,18 +37,20 @@
         </div>
     </nav>
 
-    <section class="hero-extreme">
-        <div class="video-overlay"></div>
-        <div class="hero-content">
-            <div class="experience-badge">SISTEMA DUAL 2 JUGADORES</div>
-            <h1 class="glitch" data-text="VUELA_JUNTOS">VUELA JUNTOS</h1>
-            <p>La montaña y el equipo clásico de parapente se fusionan con la tecnología VR más avanzada de Venezuela.</p>
-            
-            <div class="cta-group">
-                <button class="btn-reserva" onclick="triggerLaunch()">¡RESERVAR MI VUELO!</button>
-            </div>
+<section class="hero-extreme">
+    <div class="video-overlay"></div>
+    <div class="hero-content">
+        <div class="experience-badge">SISTEMA DUAL 2 JUGADORES</div>
+        <h1 class="glitch" data-text="VUELA_JUNTOS">VUELA JUNTOS</h1>
+        <p>La montaña y el equipo clásico de parapente se fusionan con la tecnología VR más avanzada de Venezuela.</p>
+        
+        <div class="cta-group">
+            <button id="btn-vuelo" class="btn-reserva">¡RESERVAR MI VUELO!</button>
         </div>
-    </section>
+    </div>
+</section>
+
+<script src="script.js"></script>
 
  <section id="equipo" class="hardware-showcase">
     <div class="content-wrapper">
@@ -218,24 +220,6 @@
         <p>@VRPARAGLIDER - ESPÍRITU AVENTURERO 2026</p>
     </footer>
 
-<script src="script.js"></script> <script>
-    function triggerLaunch() {
-        // 1. Efecto visual: Flash de encendido de casco VR
-        document.body.style.transition = "0.2s";
-        document.body.style.filter = "brightness(1.5) contrast(1.2)";
-        
-        setTimeout(() => {
-            // 2. Volver a la normalidad
-            document.body.style.filter = "none";
-            
-            // 3. El mensaje de Windows (Alert)
-            alert("🚀 SISTEMA VR LISTO: ¡Prepárate para el salto en Caracas! Síguenos a traves de nuestras Redes Sociales");
-            
-            // 4. OPCIONAL: Redirigir a WhatsApp o Instagram (Descomenta la línea de abajo si quieres usarlo)
-            // window.location.href = "https://wa.me/tunúmero"; 
-        }, 200);
-    }
-    </script>
 </body>
 
 </body>
